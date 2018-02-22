@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "nodemon ./bin/framework",
+    "start": "nodemon ./bin/framework-hxp",
     "build-css": "node-sass --include-path scss './public/sass/materialize.scss' './public/css/materialize.css' & node-sass --include-path scss './public/sass/global.scss' './public/css/global.css'",
     "watch-css": "sudo nodemon -e scss -x 'npm run build-css'"
   },
