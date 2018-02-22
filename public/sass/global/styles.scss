@@ -1,0 +1,117 @@
+nav {
+    z-index: 10;
+    position: relative;
+}
+.nav-logo {
+    height: 64px;
+}
+.nav-logo-side {
+    height: 84px;
+}
+.nav-side-logo {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dropdown-nav {
+    margin-top: 65px!important;
+}
+.dropdown-padding {
+    padding: 0 32px!important;
+    .row {
+        margin-bottom: 0;
+    }
+}
+#nav-mobile {
+    transition: .66s; 
+}
+#side-menu {
+    padding: 15px;
+    position: fixed;
+    z-index: 1000;
+    cursor: pointer;
+}
+#toast-container {
+    top: 3%!important;
+    right: 3%!important;
+}
+.slider-img {
+    position: absolute;
+    margin-left: -50%;
+    width: 100%;
+    z-index: -1;
+}
+.slider-container-nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+.slider-nav {
+    position: relative;
+    z-index: 2;
+    color: white;
+    opacity:0.7;
+    transition: all 0.66s ease; -webkit-transition: all 0.66s ease;
+}
+.slider-nav:hover {
+    opacity:1;
+}
+.slider-text {
+    margin-right: 20%;
+    opacity: 0;
+}
+.slider-text-anime {
+    animation: slide-text-right 1s;
+    opacity: 1;
+}
+
+form {
+    .input-field-border-left {
+        color: #1976D2;
+        border-radius: 5px 0 0 5px!important;
+        border-bottom: 1px solid #9e9e9e!important;
+        border-left: 1px solid #9e9e9e!important;
+        border-top: 1px solid #9e9e9e!important;
+        padding-left: 10px!important;
+    }
+    .input-field-border-left:focus:not([readonly]) {
+        border-bottom: 1px solid #1976D2!important;
+        border-left: 1px solid #1976D2!important;
+        border-top: 1px solid #1976D2!important;
+        box-shadow: none!important;
+    }
+    .input-field-validate {
+        border-radius: 0 5px 5px 0!important;
+        border-bottom: 1px solid #9e9e9e;
+        border-right: 1px solid #9e9e9e;
+        border-top: 1px solid #9e9e9e;
+        padding-right: 10px!important;
+        transition: .2s;
+        button {
+            background-color: whitesmoke!important;
+            margin-top: 2px;
+            margin-bottom: 3px;
+            box-shadow: none!important;
+            i {
+                color: #9e9e9e;
+                transition: .2s;
+            }
+        }
+    }
+    .highlight-right {
+        border-bottom: 1px solid #1976D2!important;
+        border-right: 1px solid #1976D2!important;
+        border-top: 1px solid #1976D2!important;
+    }
+    .padding-left {
+        padding-left: 10px!important;
+    }
+    .input-field label:not(.label-icon).active {
+        transform: translateY(-180%)!important;
+        padding-left: 0!important;
+    }
+}

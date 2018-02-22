@@ -1,0 +1,77 @@
+<% if (nav.type && nav.type == 'top') { %>
+    
+    <% for (var i = 0; i < nav.tabs.length; i++) { %>
+        <% if (nav.tabs[i].dropdown.active) { %>
+            <ul id="dropdownNav-<%= i %>" class="dropdown-content dropdown-nav">
+                <% for (var j = 0; j < nav.tabs[i].dropdown.entity.length; j++) { %>
+                    <li><a class="<%= styles.primaryTextColor %>" href="#!"><%= nav.tabs[i].dropdown.entity[j].title %></a></li>
+                <% } %>
+            </ul>
+        <% } %>
+    <% } %>
+
+    <nav>
+        <div class="nav-wrapper <%= styles.primaryColor %>">
+            <a id="brand-logo" href="<%= nav.linkLogo %>" class="brand-logo"><img class="nav-logo" src="<%= nav.logo %>" alt="<%= nav.altLogo %>"></a>
+            <ul id="nav-menu" class="right hide-on-med-and-down">
+
+                <% for (var i = 0; i < nav.tabs.length; i++) { %>
+                    <% if (nav.tabs[i].dropdown.active) { %>
+                        <li class="nav-tab"><a class="dropdown-button" href="#!" data-activates="dropdownNav-<%= i %>"><%= nav.tabs[i].title %> <i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+                    <% } else { %>
+                        <li class="nav-tab"><a href="<%= nav.tabs[i].link %>"><%= nav.tabs[i].title %></a></li>
+                    <% } %>
+                <% } %>
+
+            </ul>
+        </div>
+    </nav>
+<% } else if (nav.type && nav.type == 'side') { %>
+    <ul id="nav-mobile" class="side-nav fixed">
+        <li class="nav-side-logo"><img class="nav-logo-side" src="<%= nav.logo %>" alt="<%= nav.altLogo %>"></li>
+
+        <% for (var i = 0; i < nav.tabs.length; i++) { %>
+            <% if (nav.tabs[i].dropdown.active) { %>
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li class="bold">
+                            <a class="collapsible-header waves-effect dropdown-padding">
+                                <div class="row">
+                                    <div class="col s2">
+                                        <span class="<%= nav.tabs[i].icon %>"></span>
+                                    </div>
+                                    <div class="col s10">
+                                        <%= nav.tabs[i].title %>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="collapsible-body">
+                                <ul>
+
+                                    <% for (var j = 0; j < nav.tabs[i].dropdown.entity.length; j++) { %>
+                                        <li><a class="<%= styles.primaryTextColor %>" href="<%= nav.tabs[i].dropdown.entity[j].link %>"><%= nav.tabs[i].dropdown.entity[j].title %></a></li>
+                                    <% } %>
+
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>                        
+            <% } else { %>
+                <li class="bold">
+                    <a href="<%= nav.tabs[i].link %>">
+                        <div class="row">
+                            <div class="col s2">
+                                <span class="<%= nav.tabs[i].icon %>"></span>
+                            </div>
+                            <div class="col s10">
+                                <%= nav.tabs[i].title %>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            <% } %>
+        <% } %>
+
+      </ul>
+<% } %>

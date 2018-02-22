@@ -1,0 +1,31 @@
+<form id="<%= Form.name %>Form" action="<%= Form.action %>" method="post" enctype="application/x-www-form-urlencoded">
+    <div class="row">
+        <% for (var i = 0; i < Form.entity.length; i++) { %>
+            <% if (Form.entity[i].type === 'text') { %>
+                <div class="input-field col <%= Form.entity[i].class %>">
+                    <input name="<%= Form.entity[i].id %>" id="<%= Form.entity[i].id %>" class="validate" type="text" required>
+                    <label for="<%= Form.entity[i].id %>" data-error="wrong" data-success="right"><%= Form.entity[i].label %></label>
+                </div>
+            <% } %>
+            <% if (Form.entity[i].type === 'email' || Form.entity[i].type === 'password') { %>
+                <div class="input-field col <%= Form.entity[i].class %>">
+                    <input name="<%= Form.entity[i].id %>" id="<%= Form.entity[i].id %>" class="validate" type="<%= Form.entity[i].type %>" pattern=".{5,255}" required>
+                    <label for="<%= Form.entity[i].id %>" data-error="wrong" data-success="right"><%= Form.entity[i].label %></label>
+                </div>
+            <% } %>
+            <% if (Form.entity[i].type === 'select') { %>
+                <div class="input-field col <%= Form.entity[i].class %>">
+                    <select name="<%= Form.entity[i].id %>" id="<%= Form.entity[i].id %>">
+                        <% for (var j = 0; j < Form.entity[i].select.length; j++) { %>
+                            <option value="<%= Form.entity[i].select[j].id %>"><%= Form.entity[i].select[j].id %></option>
+                        <% } %>
+                    </select>
+                    <label><%= Form.entity[i].label %></label>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+    <input id="<%= Form.name %>Submit" class="btn waves-effect waves-light disabled" type="submit" value="Submit">
+</form>
+
+<script src="js/form.js"></script>

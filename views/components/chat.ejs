@@ -1,0 +1,24 @@
+<chat-active-user id="active-user" class="z-depth-1">
+</chat-active-user>
+
+<chat-message class="z-depth-1">
+    <div id="chat-control">
+        <i id="chat-close" class="fa fa-angle-down fa-lg right"></i>
+        <i id="chat-open" class="fa fa-angle-up fa-lg right"></i>
+        <b class="center">ChatBox</b>
+    </div>
+    <div id="message" class="col s12"></div>
+    <form action="" id="chat-form" class="col s12">
+        <div class="row">
+            <div class="input-field col s10">
+                <input name="chatMessage" id="chat-message" class="input-field-border-left" type="text" autocomplete="off">
+                <label for="chatMessage" class="padding-left">Message</label>
+            </div>
+            <div class="input-field col s2 input-field-validate">
+                <button class="btn-floating waves-effect waves-light" type="submit"><i class="fa fa-check-circle fa-lg"></i></button>
+            </div>
+        </div>
+    </form>
+
+</chat-message>
+<script src="/js/chat.js"></script>

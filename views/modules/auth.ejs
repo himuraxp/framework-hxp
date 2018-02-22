@@ -1,0 +1,7 @@
+<% if (Global.route.url.length > 1 && Global.route.url[2] === 'signup') { %>
+    <h1><%= Global.route.url[2] %></h1>
+<% } else { %>
+    <h1>signin</h1>
+<% } %>
+<% var Form = Global.form %>
+<% include ../components/form %>

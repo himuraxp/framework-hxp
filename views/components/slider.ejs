@@ -1,0 +1,38 @@
+<% if (slider && slider.slides) { %>
+<slider>
+    <% var size = ((slider.type == "header") ? "height:480px;" : "height:100%;"); %>
+    <% if (nav && nav.type == "side") { %>
+    <div id="slide-window" class="slide-window-side" style="padding-left:300px;<%= size %>">
+    <% } else { %>
+    <div id="slide-window" style="<%= size %>">
+    <% } %>
+        <ol id="slides" start="1">
+
+            <% for (var i = 0; i < slider.slides.length; i++) { %>
+                <% if (i == 0) { %>
+                    <li class="slide color-0 alive" style="background-image:url(<%= slider.slides[i].urlPic %>);">
+                        <div id="slide-text-0" class="slider-text slider-text-anime">
+                            <h2><%= slider.slides[i].title %></h2>
+                            <p><%= slider.slides[i].describe %></p>
+                        </div>
+                    </li>
+                <% } else { %>
+                    <li class="slide color-<%= i %>" style="background-image:url(<%= slider.slides[i].urlPic %>);">
+                        <div id="slide-text-<%= i %>" class="slider-text">
+                            <h2><%= slider.slides[i].title %></h2>
+                            <p><%= slider.slides[i].describe %></p>
+                        </div>
+                    </li>
+                <% } %>
+            <% } %>
+
+        </ol>
+        <% if (nav && nav.type == "side") { %>
+        <span class="nav-fa-side nav fa fa-chevron-left fa-3x" id="left" style="padding-left:300px;"></span>
+        <% } else { %>
+        <span class="nav fa fa-chevron-left fa-3x" id="left"></span>
+        <% } %>
+        <span class="nav fa fa-chevron-right fa-3x" id="right"></span>
+    </div>
+</slider>
+<% }  %>
