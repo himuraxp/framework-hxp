@@ -1,0 +1,38 @@
+<body>
+    <%- include('components/nav', {nav: Global.nav, styles: Global.styles}) %>
+    
+    <% if (Global.slider && Global.slider.active) { %>
+        <%- include('components/slider', {slider: Global.slider, styles: Global.styles, nav: Global.nav}) %>
+    <% } %>
+    <div class="container">
+        <div class="row">            
+            <div class="col s12 offset-l1">
+                <% if (Global.route && Global.route.name === 'carousel') { %>
+                    <%- include('components/carousel', {Global: Global}) %>
+                <% } %>
+                <% if (Global.route && Global.route.name === 'auth') { %>
+                    <%- include('modules/auth', {Global: Global}) %>
+                    <% if (Global.route.url.length > 1 && Global.route.url[2] === 'signup') { %>
+                        <a href="/auth">I have already an account</a>
+                    <% } else { %>
+                        <a href="/auth/signup">I don't have account</a>
+                    <% } %>
+                <% } %>
+                <% if (Global.route && Global.route.name === 'config') { %>
+                    <% if (Global.route.url.length > 1 && Global.route.url[2] === 'nav') { %>
+                        <%- include('modules/config/nav', {Global: Global}) %>
+                    <% } %>
+                <% } %>
+                <% if (Global.route && Global.route.name === 'user/id') { %>
+                        <%- include('modules/user', {Global: Global, user: user}) %>
+                <% } else if (Global.route && Global.route.name === 'user') { %>
+                        <%- include('modules/users', {Global: Global, users: users}) %>
+                <% } %>
+                <% if (!Global.route || Global.route.name === '' && (locals && locals.connection)) { %>
+                        <%- include('components/chat') %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+</body>

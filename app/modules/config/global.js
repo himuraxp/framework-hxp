@@ -10,7 +10,12 @@ let Global = {
         name: '',
         url: null
     },
-    form: null
+    form: null,
+    env: {
+        mode: 'dev',
+        css: 'app.css',
+        js: 'app.js'
+    }
 }
 
 module.exports = Global

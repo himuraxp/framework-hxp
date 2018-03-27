@@ -1,0 +1,16 @@
+<h1><%= Global.route.url[2] %></h1>
+
+<div id="choice-action-nav">
+    <div class="enable">
+        <button id ="add-entity-nav" class="btn waves-effect waves-light"><i class="fa fa-plus"></i> Add</button>
+        <button class="btn waves-effect waves-light red darken-2"><i class="fa fa-trash"></i> Remove</button>
+    </div>
+    <div class="disable" style="display:none;">
+        <button id ="back-choice-action-nav" class="btn waves-effect waves-light"><i class="fa fa-chevron-left"></i> Back</button>
+    </div>
+</div>
+
+<script src="js/navEdit.js"></script>
+
+<% var Form = Global.form %>
+<% include ../../components/form %>

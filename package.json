@@ -5,7 +5,9 @@
   "scripts": {
     "start": "nodemon ./bin/framework-hxp",
     "build-css": "node-sass --include-path scss './public/sass/materialize.scss' './public/css/materialize.css' & node-sass --include-path scss './public/sass/global.scss' './public/css/global.css'",
-    "watch-css": "sudo nodemon -e scss -x 'npm run build-css'"
+    "watch-css": "sudo nodemon -e scss -x 'npm run build-css'",
+    "build-dev": "NODE_ENV=dev webpack --mode development",
+    "build-prod": "NODE_ENV=prod webpack --mode production"
   },
   "dependencies": {
     "MD5": "^1.3.0",
@@ -25,5 +27,24 @@
     "socket.io": "^2.0.4"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.1.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "postcss-loader": "^2.1.1",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "uglifyjs-webpack-plugin": "^1.2.3",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-manifest-plugin": "^2.0.0-rc.2"
+  }
 }

@@ -1,0 +1,84 @@
+ .carousel-root {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    .carousel-container {
+        transition: transform 0.3s;
+        transform: translate3d(0, 0, 0);
+        display: flex;
+        .carousel-item {
+            margin-bottom: 20px;
+            margin-left: 15px;
+            .carousel-item-block {
+                .carousel-item-img img {
+                    width: 100%;
+                }
+                .carousel-item-body {
+                    padding: 15px;
+                    .carousel-item-title {
+                        font-weight: bolder;
+                        font-size: 1.2em;
+                    }
+                    .carousel-item-describe {
+                        color: #858585;
+                    }
+                }
+            }
+            transition: transform 0.3s;
+        }
+        .carousel-item:hover {
+            transform: translateY(-5%);
+        }
+    }
+    .carousel-container::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+    .carousel-container:focus {
+        outline: none!important;
+    }
+    .carousel-next, .carousel-prev {
+        bottom: -1.5em;
+        position: absolute;
+        background-color: whitesmoke;
+        border-radius: 50%;
+        padding: 0 4px; 
+        transition: transform 0.3s, opacity 0.3s;
+        .fa {
+            font-size: 2em;
+            color: #858585;
+        }
+    }
+    .carousel-next:hover, .carousel-prev:hover {
+        transform: scale(1.2);
+    }
+    .carousel-next {
+        right: 0%
+    }
+    .carousel-prev {
+        margin-left: 15px;
+    }
+    .carousel-next-hidden, .carousel-prev-hidden {
+        opacity: 0;
+    }
+    .carousel-pagination {
+        position: absolute;
+        bottom: -2em;
+        left: 50%;
+        transform: translateX(-50%);
+        .carousel-pagination-button {
+            display: inline-block;
+            background-color: whitesmoke;
+            width: 2em;
+            height: 2em;
+            border-radius: 50%;
+            margin-left: 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .carousel-pagination-button-active, .carousel-pagination-button:hover {
+            transform: scale(1.2);
+        }
+    }
+}

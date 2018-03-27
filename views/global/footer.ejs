@@ -1,17 +1,15 @@
 <footer>
+    <script src="<%= Global.env.js %>"></script>
+    <script>
+        var tmpGlobal = <%- JSON.stringify(Global) %>
+        var tmpLocal = <%- JSON.stringify(locals) %>
+        new App.Init(tmpGlobal, tmpLocal)
+    </script>
     <script src="js/plugins/materialize.min.js"></script>
     <script src="js/global.js"></script>
     <script src="js/nav.js"></script>
     <% if (Global.slider && Global.slider.active) { %>
         <script src="js/slider.js"></script>
     <% } %>
-    <% if (locals.flash) { %>
-        <script src="js/flashMessage.js"></script>
-        <script>
-            var flashData = <%- JSON.stringify(locals.flash) %>
-            FLASH.toast(flashData);
-        </script>
-    <% } %>
-    <script src="js/clientSocket.js"></script>
 
 </footer>

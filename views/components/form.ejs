@@ -3,14 +3,18 @@
         <% for (var i = 0; i < Form.entity.length; i++) { %>
             <% if (Form.entity[i].type === 'text') { %>
                 <div class="input-field col <%= Form.entity[i].class %>">
-                    <input name="<%= Form.entity[i].id %>" id="<%= Form.entity[i].id %>" class="validate" type="text" required>
-                    <label for="<%= Form.entity[i].id %>" data-error="wrong" data-success="right"><%= Form.entity[i].label %></label>
+                    <% if (Form.entity[i].validate) { %>
+                        <input name="<%= Form.entity[i].id %>" id="<%= Form.entity[i].id %>" class="validate" type="text" required>
+                    <% } else { %>
+                        <input name="<%= Form.entity[i].id %>" id="<%= Form.entity[i].id %>" type="text">                    
+                    <% } %>
+                    <label for="<%= Form.entity[i].id %>"><%= Form.entity[i].label %></label>
                 </div>
             <% } %>
             <% if (Form.entity[i].type === 'email' || Form.entity[i].type === 'password') { %>
                 <div class="input-field col <%= Form.entity[i].class %>">
                     <input name="<%= Form.entity[i].id %>" id="<%= Form.entity[i].id %>" class="validate" type="<%= Form.entity[i].type %>" pattern=".{5,255}" required>
-                    <label for="<%= Form.entity[i].id %>" data-error="wrong" data-success="right"><%= Form.entity[i].label %></label>
+                    <label for="<%= Form.entity[i].id %>"><%= Form.entity[i].label %></label>
                 </div>
             <% } %>
             <% if (Form.entity[i].type === 'select') { %>

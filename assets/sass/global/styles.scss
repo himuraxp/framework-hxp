@@ -1,7 +1,11 @@
+html {
+    overflow-x: hidden;
+}
 nav {
     z-index: 10;
     position: relative;
 }
+
 .nav-logo {
     height: 64px;
 }

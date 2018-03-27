@@ -14,6 +14,7 @@ app.set('view engine', 'ejs')
 
 // Custom
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'dist')))
 app.use(favicon(path.join(__dirname, 'public/img/', 'favicon.ico')))
 
 // Parser
@@ -31,6 +32,9 @@ app.use(session({
 
 // Message Flash
 app.use(require('./app/middleware/flash'))
+
+// Set ENV mode for choose files path to .js and .css
+app.use(require('./app/middleware/env'))
 
 // Routes
 app.use('/', router)

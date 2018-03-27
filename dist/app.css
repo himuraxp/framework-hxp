@@ -22,6 +22,9 @@
   100% {
     margin-right: 20%; } }
 
+html {
+  overflow-x: hidden; }
+
 nav {
   z-index: 10;
   position: relative; }
@@ -244,3 +247,67 @@ chat-message {
       left: -30px; }
   chat-message #chat-form .row {
     margin-bottom: 0; }
+
+.carousel-root {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 50px; }
+  .carousel-root .carousel-container {
+    transition: transform 0.3s;
+    transform: translate3d(0, 0, 0);
+    display: flex; }
+    .carousel-root .carousel-container .carousel-item {
+      margin-bottom: 20px;
+      margin-left: 15px;
+      transition: transform 0.3s; }
+      .carousel-root .carousel-container .carousel-item .carousel-item-block .carousel-item-img img {
+        width: 100%; }
+      .carousel-root .carousel-container .carousel-item .carousel-item-block .carousel-item-body {
+        padding: 15px; }
+        .carousel-root .carousel-container .carousel-item .carousel-item-block .carousel-item-body .carousel-item-title {
+          font-weight: bolder;
+          font-size: 1.2em; }
+        .carousel-root .carousel-container .carousel-item .carousel-item-block .carousel-item-body .carousel-item-describe {
+          color: #858585; }
+    .carousel-root .carousel-container .carousel-item:hover {
+      transform: translateY(-5%); }
+  .carousel-root .carousel-container::after {
+    content: '';
+    clear: both;
+    display: table; }
+  .carousel-root .carousel-container:focus {
+    outline: none !important; }
+  .carousel-root .carousel-next, .carousel-root .carousel-prev {
+    bottom: -1.5em;
+    position: absolute;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    padding: 0 4px;
+    transition: transform 0.3s, opacity 0.3s; }
+    .carousel-root .carousel-next .fa, .carousel-root .carousel-prev .fa {
+      font-size: 2em;
+      color: #858585; }
+  .carousel-root .carousel-next:hover, .carousel-root .carousel-prev:hover {
+    transform: scale(1.2); }
+  .carousel-root .carousel-next {
+    right: 0%; }
+  .carousel-root .carousel-prev {
+    margin-left: 15px; }
+  .carousel-root .carousel-next-hidden, .carousel-root .carousel-prev-hidden {
+    opacity: 0; }
+  .carousel-root .carousel-pagination {
+    position: absolute;
+    bottom: -2em;
+    left: 50%;
+    transform: translateX(-50%); }
+    .carousel-root .carousel-pagination .carousel-pagination-button {
+      display: inline-block;
+      background-color: whitesmoke;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      margin-left: 10px;
+      transition: transform 0.3s;
+      cursor: pointer; }
+    .carousel-root .carousel-pagination .carousel-pagination-button-active, .carousel-root .carousel-pagination .carousel-pagination-button:hover {
+      transform: scale(1.2); }

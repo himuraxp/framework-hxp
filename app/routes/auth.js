@@ -9,6 +9,7 @@ let signupForm = require('../modules/forms/signup')
 let UserController = require('../models/user')
 
 router.get('/', (req, res, next) => {
+    Global.env = req.env
     Global.slider.active = false
     Global.route.name = 'auth'
     Global.route.url = splitUrl(req._parsedOriginalUrl.pathname)
@@ -35,6 +36,7 @@ router.post('/', (req, res, next) => {
 })
 
 router.get('/signup', (req, res, next) => {
+    Global.env = req.env    
     Global.slider.active = false
     Global.route.name = 'auth'
     Global.route.url = splitUrl(req._parsedOriginalUrl.pathname)

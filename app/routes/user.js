@@ -5,6 +5,7 @@ let splitUrl = require('../middleware/splitUrl')
 let UserController = require('../models/user')
 
 router.get('/', (req, res, next) => {
+    Global.env = req.env
     Global.slider.active = false
     Global.route.name = 'user'
     Global.route.url = splitUrl(req._parsedOriginalUrl.pathname)
@@ -14,6 +15,7 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/:id', (req, res, next) => {
+    Global.env = req.env
     Global.slider.active = false
     Global.route.name = 'user/id'
     Global.route.url = splitUrl(req._parsedOriginalUrl.pathname)
